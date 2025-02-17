@@ -19,7 +19,7 @@ function findLongestWord(words) {
     return words[0]
   } else if (words.length > 1) {
     words.sort(function (a, b) {
-      if (a.length < b.length) return 1; 
+      if (a.length < b.length) return 1;
       if (a.length > b.length) return -1;
       if (a.length === b.length) return 0;
     });
@@ -30,15 +30,17 @@ function findLongestWord(words) {
 // Iteration #3: Calculate the sum
 // const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers(numbers) { 
+function sumNumbers(numbers) {
   if (numbers.length === 0) {
     return 0
   } else if (numbers.length >= 1) {
     let sum = 0
-    for (let i = 0; i < numbers.length; ++i)
+    for (let i = 0; i < numbers.length; ++i) {
       sum += numbers[i];
+    }
     return sum
-  } 
+    
+  }
 }
 
 
@@ -46,10 +48,27 @@ function sumNumbers(numbers) {
 // Iteration #3.1 Bonus:
 // const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
-function sum(mixedArr) { 
-  
+function sum(mixedArr) {
+  for (const elements of mixedArr) {
+    if (typeof elements === 'number') {
+      let sum = 0
+      for (let i = 0; i < mixedArr.length; ++i) {
+        sum += mixedArr[i];
+      }
+      return sum
       
+    } else if (typeof elements === 'string') {
+      let sum2 = 0
+      for (let i = 0; i < mixedArr.length; ++i) {
+        sum2 += mixedArr[i].length
+      }
+      return sum2
+      
+    }
   }
+}
+
+
 
 
 
