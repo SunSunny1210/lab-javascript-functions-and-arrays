@@ -102,7 +102,23 @@ function averageWordLength(wordsArr) {
  }
 
 // Bonus - Iteration #4.1
-function avg() { }
+function avg(mixedArr) {
+  if (mixedArr.length === 0) {
+    return null
+  } 
+  let allAvg = 0
+  for (let i = 0; i < mixedArr.length; ++i) {
+    if (typeof mixedArr[i] === 'number') {
+      allAvg += mixedArr[i];
+    } else if (typeof mixedArr[i] === 'string') {
+      allAvg += mixedArr[i].length;
+    } else if (typeof mixedArr[i] === 'boolean') {
+      + mixedArr[i];
+      allAvg += mixedArr[i]
+    } 
+  }
+  return allAvg / mixedArr.length
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
