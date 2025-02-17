@@ -121,7 +121,7 @@ function avg(mixedArr) {
 }
 
 // Iteration #5: Unique arrays
-const wordsUnique = [
+/*const wordsUnique = [
   'crab',
   'poison',
   'contagious',
@@ -133,25 +133,18 @@ const wordsUnique = [
   'communion',
   'simple',
   'bring'
-];
+];*/
 
-function uniquifyArray() {
+function uniquifyArray(wordsUnique) {
   if (wordsUnique.length === 0) {
     return null
   }
-
-  wordsUnique.sort(function (a, b) {
-    if (a === b) return -1
-    if (a < b) return 0
-    if (a > b) return 1
-  })
-
   for (let i = 0; i < wordsUnique.length; ++i) {
-    if (wordsUnique[i].localeCompare(wordsUnique[i + 1]) === 0) {
-      wordsUnique.splice(i + 1, 1);
-    }
+    for (let j = i + 1; j < wordsUnique.length; ++j)
+    if (wordsUnique[i] === wordsUnique[j])
+      wordsUnique.splice(j, 1);
   }
-  console.log(wordsUnique)
+
   return wordsUnique
 }
 
@@ -194,7 +187,7 @@ function howManyTimes(wordsCount, word) {
   for (let i = 0; i < wordsCount.length; ++i) {
     if (wordsCount[i] === word) {
       times += 1;
-    } 
+    }
   }
   return times
 }
