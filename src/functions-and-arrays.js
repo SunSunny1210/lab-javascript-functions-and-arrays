@@ -49,23 +49,20 @@ function sumNumbers(numbers) {
 // const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
 function sum(mixedArr) {
-  for (const elements of mixedArr) {
-    if (typeof elements === 'number') {
-      let sum = 0
-      for (let i = 0; i < mixedArr.length; ++i) {
-        sum += mixedArr[i];
-      }
-      return sum
-      
-    } else if (typeof elements === 'string') {
-      let sum2 = 0
-      for (let i = 0; i < mixedArr.length; ++i) {
-        sum2 += mixedArr[i].length
-      }
-      return sum2
-      
+  let sum = 0
+  for (let i = 0; i < mixedArr.length; ++i) {
+    if (typeof mixedArr[i] === 'number') {
+      sum += mixedArr[i];
+    } else if (typeof mixedArr[i] === 'string') {
+      sum += mixedArr[i].length
+    } else if (typeof mixedArr[i] === 'boolean') {
+      + mixedArr[i];
+      sum += mixedArr[i];
+    } else {
+      throw new Error("Type of value not suported");
     }
   }
+  return sum
 }
 
 
