@@ -151,22 +151,24 @@ function uniquifyArray() {
       wordsUnique.splice(i + 1, 1);
     }
   }
-
-
   console.log(wordsUnique)
-  return wordsUnique
-  
-
-  
+  return wordsUnique 
  }
 
 
 
 // Iteration #6: Find elements
-const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+// const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() { }
-
+function doesWordExist(wordsFind, word) { 
+  if (wordsFind.length === 0) {
+    return null
+  } else if (wordsFind.includes(word) === true) {
+    return true 
+  } else if (wordsFind.includes(word) === false) {
+    return false
+  }
+}
 
 
 // Iteration #7: Count repetition
