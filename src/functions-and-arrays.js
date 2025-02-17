@@ -135,7 +135,30 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() { }
+function uniquifyArray() {
+  if (wordsUnique.length === 0) {
+    return null
+  }
+
+  wordsUnique.sort(function (a, b) {
+    if (a === b) return -1
+    if (a < b) return 0
+    if (a > b) return 1
+  })
+
+  for (let i = 0; i < wordsUnique.length; ++i) {
+    if (wordsUnique[i].localeCompare(wordsUnique[i + 1]) === 0) {
+      wordsUnique.splice(i + 1, 1);
+    }
+  }
+
+
+  console.log(wordsUnique)
+  return wordsUnique
+  
+
+  
+ }
 
 
 
