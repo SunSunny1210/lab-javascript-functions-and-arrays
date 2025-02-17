@@ -82,7 +82,7 @@ function averageNumbers(numbersAvg) {
       sum += numbersAvg[i];
     }
     return sum / numbersAvg.length
- }
+  }
 }
 
 
@@ -99,13 +99,13 @@ function averageWordLength(wordsArr) {
     }
     return sum / wordsArr.length
   }
- }
+}
 
 // Bonus - Iteration #4.1
 function avg(mixedArr) {
   if (mixedArr.length === 0) {
     return null
-  } 
+  }
   let allAvg = 0
   for (let i = 0; i < mixedArr.length; ++i) {
     if (typeof mixedArr[i] === 'number') {
@@ -115,7 +115,7 @@ function avg(mixedArr) {
     } else if (typeof mixedArr[i] === 'boolean') {
       + mixedArr[i];
       allAvg += mixedArr[i]
-    } 
+    }
   }
   return allAvg / mixedArr.length
 }
@@ -152,19 +152,19 @@ function uniquifyArray() {
     }
   }
   console.log(wordsUnique)
-  return wordsUnique 
- }
+  return wordsUnique
+}
 
 
 
 // Iteration #6: Find elements
 // const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist(wordsFind, word) { 
+function doesWordExist(wordsFind, word) {
   if (wordsFind.length === 0) {
     return null
   } else if (wordsFind.includes(word) === true) {
-    return true 
+    return true
   } else if (wordsFind.includes(word) === false) {
     return false
   }
@@ -172,7 +172,7 @@ function doesWordExist(wordsFind, word) {
 
 
 // Iteration #7: Count repetition
-const wordsCount = [
+/*const wordsCount = [
   'machine',
   'matter',
   'subset',
@@ -184,9 +184,20 @@ const wordsCount = [
   'truth',
   'disobedience',
   'matter'
-];
+];*/
 
-function howManyTimes() { }
+function howManyTimes(wordsCount, word) {
+  if (wordsCount.length === 0) {
+    return 0
+  }
+  let times = 0
+  for (let i = 0; i < wordsCount.length; ++i) {
+    if (wordsCount[i] === word) {
+      times += 1;
+    } 
+  }
+  return times
+}
 
 
 
